@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,600&display=swap');
+
+:root{
+		--box-shadow: 0 .5rem 1.5rem rgb(0,0,0,0.1);
+		--black: #192a56;
+		--blue: #DDE7F1;
+		--light-color: #666;
+
+}
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	transition: all .2s linear;
+	color: var(--black);
+	/*border: 1px solid black;*/
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	background: var(--blue);
+}
+
+
+
+body{
+	/*border: 1px solid black;*/
+	position: relative;
+	background: #fff;
+	width: 90%;
+	margin: 5% auto;
+	border-radius: 2rem;
+	z-index: 1000;
+}
+
+header{
+	position: relative;	
+	padding: 1rem 5%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+	box-shadow: var(--box-shadow);
+}
+
+header .logo img{
+	width: 50px;
+}
+
+header #navbar a{
+	font-size: 1.7rem;
+	border-raadius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	color: var(-light-color);
+}
+
+header #navbar a:hover,
+.content .btn:hover{
+	letter-spacing: .2rem;
+}
+
+
+header #navbar.active{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+header .registration i:hover{
+	transform: rotate(180deg);
+}
+
+header .registration a:hover{
+	letter-spacing: .2rem;
+	color: #fff;
+	background: var(--black);
+}
+
+header .registration a{
+	font-size: 1.7rem;
+	text-align: center;
+	border-radius: 2rem;
+	padding: 0.5rem 1.5rem;
+	cursor: pointer;
+	border: .3rem solid var(--black);
+	margin-right: 1rem;	
+}
+
+header .registration i#menu-bars{
+	display: none;
+	font-size: 2rem;
+}
+
+/*----------------------------------------*/
+
+.content{
+	position: relative;
+	display: flex;
+	padding: 2rem 10rem;
+	gap: 5rem;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.content h1{
+	font-size: 5rem;
+}
+
+.content .detail{
+	font-size: 1.5rem;
+}
+
+.content .btn{
+	margin-top: 3rem;
+	color: #fff;
+	background: var(--black);
+	padding: 1rem 1.5rem;
+	border-radius: 2rem;
+	box-shadow: var(--box-shadow);
+}
+
+.last img{
+	width: 100%;
+	margin-top: -9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*MEDIA QUERY*/
+@media (max-width: 991px){
+	html{
+		font-size: 50%;
+	}
+
+}
+
+@media (max-width: 768px){
+
+
+	header .registration i#menu-bars{
+		display: inline-block;
+	}
+
+	header #navbar a{
+		display: none;
+	}
+
+	header #navbar{
+		position:absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #fff;
+		border-top: .1rem solid rgba(0, 0, 0, .2);
+		border-bottom: .1rem solid rgba(0, 0, 0, .2);
+		padding: 1rem;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		margin: auto;
+	}
+
+	header #navbar a{
+		display: block; /*dibuat displaynya block, karena saat ukuran layar kecil menu tampil kebawah dengan width 100%*/
+		padding: 1.5rem;
+		margin: 1rem;
+		font-size: 2rem;
+		background: #eee;
+		border-radius: 1.8rem;
+	}
+
+	header #navbar.active a:hover{
+		color: #fff;
+		background: var(--black);
+	}
+
+	.last img{
+		margin-top: -4rem;
+	}
+
+}
+
+@media (max-width:  450px){
+	html{
+		font-size: 35%;
+	}
+	.content{
+		display: inline-block;
+	}
+}
